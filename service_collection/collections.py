@@ -9,6 +9,8 @@ TYPE = "type"
 T = TypeVar("T")
 U = TypeVar("U")
 
+_global_provider: Optional["ServiceProvider"] = None
+
 
 class ServiceProvider:
     """
@@ -111,22 +113,26 @@ class ServiceCollection:
         Returns:
             ServiceProvider: An instance of ServiceProvider initialized with the registered services.
         """
-        return ServiceProvider(self._services)
+        global _global_provider
+        _global_provider = ServiceProvider(self._services)
+        return _global_provider
 
 
-# Create a method like this to retrieve services easily in your code.
-# def inject(service_type: Type[T]) -> T:
-#     """
-#     Retrieves an instance of the specified service type using the provided service provider.
-#     Handles singleton, transient, and scoped services.
-#
-#     Args:
-#         service_type (Type[T]): The type of the service to retrieve.
-#
-#     Returns:
-#         T: An instance of the requested service type.
-#
-#     Raises:
-#         Exception: If the requested service type is not registered or scope_id is required for scoped services.
-#     """
-#     return provider.get_service(service_type)
+def inject(service_type: Type[T]) -> T:
+    """
+    Retrieves an instance of the specified service type using the global service provider.
+    Handles singleton and transient services.
+
+    Args:
+        service_type (Type[T]): The type of the service to retrieve.
+
+    Returns:
+        T: An instance of the requested service type.
+
+    Raises:
+        Exception: If the requested service type is not registered or if the global provider is not set.
+    """
+    if _global_provider is None:
+        raise Exception("You must build the service provider before attempting to inject services.")
+
+    return _global_provider.get_service(service_type)
