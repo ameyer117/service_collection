@@ -11,7 +11,7 @@ requires-python = ">=3.9"
 license = {text = "MIT License"}
 
 [project.urls]
-Homepage = "https://github.com/yourusername/mypackage"
+Homepage = "https://github.com/ameyer117/service_collection"
 
 [tool.black]
 line-length = 120

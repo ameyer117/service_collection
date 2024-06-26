@@ -138,7 +138,7 @@ print(bar_service.do_something())  # Output: BarService did something with FooSe
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/ameyer117/service_collection/blob/main/LICENSE) file for details.
 
 ---
 
