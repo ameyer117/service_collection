@@ -19,6 +19,7 @@ pip install service-collection
 
 ```python
 from abc import ABC, abstractmethod
+from service_collection import inject
 
 # Define an abstract base class for the service interface
 class IFooService(ABC):
@@ -38,8 +39,8 @@ class IBarService(ABC):
         pass
 
 class BarService(IBarService):
-    def __init__(self, foo_service: IFooService):
-        self.foo_service = foo_service
+    def __init__(self):
+        self.foo_service = inject(IFooService)
 
     def do_something(self):
         return f"BarService did something with {self.foo_service.do_something()}"
@@ -100,8 +101,8 @@ class IBarService(ABC):
         pass
 
 class BarService(IBarService):
-    def __init__(self, foo_service: IFooService):
-        self.foo_service = foo_service
+    def __init__(self):
+        self.foo_service = inject(IFooService)
 
     def do_something(self):
         return f"BarService did something with {self.foo_service.do_something()}"

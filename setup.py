@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="service_collection",
-    version="0.6.2",
+    version="0.6.3",
     author="Alec Meyer",
     author_email="11meyal@gmail.com",
     description="ASP.NET Core-style dependency injection service collection for Python",
