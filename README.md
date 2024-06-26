@@ -67,14 +67,8 @@ service_provider = services.build_service_provider()
 
 ### Creating and Using the Inject Function
 
-Define an `inject` function to retrieve service instances easily in your code:
-
-```python
-def inject(service_type):
-    return service_provider.get_service(service_type)
-```
-
-Use the `inject` function to resolve services:
+Import the `inject` function to retrieve service instances easily in your code:
+from service_collection import inject
 
 ```python
 foo_service = inject(IFooService)
@@ -90,7 +84,7 @@ Here is a complete example demonstrating how to set up and use the `service_coll
 
 ```python
 from abc import ABC, abstractmethod
-from service_collection import ServiceCollection
+from service_collection import ServiceCollection, inject
 
 # Define an abstract base class for the service interface
 class IFooService(ABC):
@@ -123,10 +117,6 @@ services.add_singleton(IBarService, BarService)
 
 # Build the service provider
 service_provider = services.build_service_provider()
-
-# Define the inject function
-def inject(service_type):
-    return service_provider.get_service(service_type)
 
 # Resolve and use services
 foo_service = inject(IFooService)
