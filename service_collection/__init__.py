@@ -1,3 +1,3 @@
-from service_collection.collections import ServiceProvider, ServiceCollection
+from service_collection.collections import ServiceCollection, inject
 
-__all__ = ["ServiceProvider", "ServiceCollection"]
+__all__ = ["ServiceCollection", "inject"]
