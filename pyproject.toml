@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "service_collection"
+version = "0.1.0"
+description = "ASP.NET Core-style dependency injection service collection for Python"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT License"}
+
+[project.urls]
+Homepage = "https://github.com/yourusername/mypackage"
+
+[tool.black]
+line-length = 120
+target-version = ['py39', 'py310', 'py311', 'py312']
