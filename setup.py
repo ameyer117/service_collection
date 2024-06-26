@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="service_collection",
-    version="0.1.0",
+    version="0.2.0",
     author="Alec Meyer",
     author_email="11meyal@gmail.com",
     description="ASP.NET Core-style dependency injection service collection for Python",
@@ -20,7 +20,7 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires=">=3.9,<=3.12",
+    python_requires=">=3.9",
     project_urls={
         "Homepage": "https://github.com/ameyer117/service_collection",
         "Documentation": "https://github.com/ameyer117/service_collection",

@@ -12,7 +12,7 @@ It currently supports transient and singleton services. Scoped services will be 
 Install the package using pip:
 
 ```bash
-pip install service_collection
+pip install service-collection
 ```
 
 ## Usage
