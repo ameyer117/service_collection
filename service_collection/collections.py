@@ -9,6 +9,8 @@ TYPE = "type"
 T = TypeVar("T")
 U = TypeVar("U")
 
+__all__ = ["ServiceCollection", "ServiceProvider", "inject"]
+
 _global_provider: Optional["ServiceProvider"] = None
 
 
