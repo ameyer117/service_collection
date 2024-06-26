@@ -1,7 +1,3 @@
-Here's the updated README with an example including the creation and usage of the `inject` function:
-
----
-
 # service_collection
 
 `service_collection` is a lightweight Python package that mimics ASP.NET's dependency injection system. It also incorporates an Angular-style `Inject` method to resolve dependencies, making it easier to manage and inject dependencies in your applications.
